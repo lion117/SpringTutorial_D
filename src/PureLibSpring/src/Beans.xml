@@ -3,8 +3,24 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="helloWorld_test" class="com.tutorial.spring.SetupHelloWorld.HelloWorld">
-        <property name="message" value="this is the first demo : Hello World!"/>
+    <bean id="helloWorld_setup" class="com.tutorial.spring.SetupHelloWorld.HelloWorld">
+        <property name="message" value="this is the first demo : Hello World! setup"/>
     </bean>
+
+
+    <bean id="helloWorld_scope" class="com.tutorial.spring.scope.HelloWorld"
+          scope="singleton"/>
+
+    <bean id="helloWorld_construction"
+          class="com.tutorial.spring.construction.HelloWorld"
+          init-method="init" destroy-method="destroy">
+        <property name="message" value="Hello World! construction"/>
+    </bean>
+
+    <bean id="helloWorld_postprocess" class="com.tutorial.spring.postprocess.HelloWorld"
+          init-method="init" destroy-method="destroy">
+        <property name="message" value="Hello World! postprocess"/>
+    </bean>
+    <bean class="com.tutorial.spring.postprocess.InitHelloWorld" />
 
 </beans>
