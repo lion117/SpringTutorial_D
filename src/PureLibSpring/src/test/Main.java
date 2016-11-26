@@ -1,4 +1,4 @@
-package com.tutorial.spring;
+package test;
 
 public class Main {
 
