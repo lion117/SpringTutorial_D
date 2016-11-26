@@ -1,4 +1,4 @@
-package com.tutorial.spring.SetupHelloWorld;
+package com.tutorial.spring.scope;
 
 /**
  * Created by Leo on 2016/11/26.
@@ -12,8 +12,12 @@ public class MainApp {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("Beans.xml");
 
-        HelloWorld obj = (HelloWorld) context.getBean("helloWorld_setup");
+        HelloWorld objA = (HelloWorld) context.getBean("helloWorld_scope");
 
-        obj.getMessage();
+        objA.setMessage("I'm object A");
+        objA.getMessage();
+
+        HelloWorld objB = (HelloWorld) context.getBean("helloWorld_scope");
+        objB.getMessage();
     }
 }
