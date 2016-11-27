@@ -88,4 +88,21 @@
 
     </bean>
 
+    <bean id="helloWorld_event" class="com.tutorial.spring.event.HelloWorld">
+        <property name="message" value="Hello World! event"/>
+    </bean>
+
+    <bean id="cStartEventHandler"
+          class="com.tutorial.spring.event.CStartEventHandler"/>
+
+    <bean id="cStopEventHandler"
+          class="com.tutorial.spring.event.CStopEventHandler"/>
+
+    <bean id="customEventHandler"
+          class="com.tutorial.spring.customizeEvent.CustomEventHandler"/>
+
+    <bean id="customEventPublisher"
+          class="com.tutorial.spring.customizeEvent.CustomEventPublisher"/>
+
+
 </beans>
